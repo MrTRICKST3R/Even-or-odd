@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {font-size:50px; font-family:Courier New;}
+        body {background-color:rgb(248, 146, 51)}
+        h1 {background-color:yellow; color:white; width:50%; border-radius:30px;}
+    </style>
+    <script>
+        function find()
+        {
+            event.preventDefault();
+            let num = document.getElementById("num");
+            let ans = document.getElementById("ans");
+
+            if (num.value == "")
+            {
+                alert("Number is Blank");
+                ans.innerHTML = "";
+                num.focus();
+                return;
+            }
+            let n = parseInt(num.value);
+            let msg = "";
+            if (n % 2 == 0)
+                msg = "Even";
+            else
+                msg = "Odd";
+            ans.innerHTML= msg;
+        }
+    </script>
+    <title> Even & Odd BY AYUSH </title>
+</head>
+<body>
+<center>
+        <h1>Even Odd Finder </h1>
+        <form onsubmit="find()">
+        <input type="number" placeholder="Enter a number" id="num"/>
+        <br><br>
+        <input type="submit" value="Find Even/Odd"/>
+        </form>
+        <h2 id="ans"/>
+</center>
+</body>
+</html>
